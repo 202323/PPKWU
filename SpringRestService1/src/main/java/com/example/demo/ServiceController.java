@@ -12,7 +12,7 @@ public class ServiceController {
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/service")
-    public Service service(@RequestParam(value="text", defaultValue="rorre") String text) {
+    public Service service(@RequestParam(value="text", required = true) String text) {
         return new Service(counter.incrementAndGet(), text);
     }
 }

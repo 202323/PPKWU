@@ -21,10 +21,16 @@ public class Service {
 
     private String reverse(String str) {
         String rev = "";
+        String sign = "";
 
         for(int i = str.length() - 1; i >= 0; i--) {
+            if(str.charAt(i) == '%'){
+                sign += str.charAt(i-1);
+                sign += str.charAt(i-2);
+            }
             rev = rev + str.charAt(i);
         }
+        System.out.println("Reversed text: "+rev);
         return rev;
     }
 
